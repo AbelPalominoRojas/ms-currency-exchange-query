@@ -1,0 +1,35 @@
+# microservice variables
+database-server: localhost                # Your database server address
+database-port: 1433                       # Your database port
+database-name: your_database_name         # Your database name
+database-username: your_database_username # Your database username
+database-password: your_database_password # Your database password
+
+
+# Application configuration
+quarkus:
+  datasource:
+    devservices:
+      enabled: false
+    db-kind: mssql
+    username: ${database-username}
+    password: ${database-password}
+    jdbc:
+      url: jdbc:sqlserver://${database-server}:${database-port};databaseName=${database-name};encrypt=true;trustServerCertificate=true
+
+  hibernate-orm:
+    jdbc:
+      timezone: ${app.timezone}
+    database:
+      generation: none
+    log:
+      format-sql: true
+
+  rest-client:
+    exchange-rate-api:
+      url: https://free.e-api.net.pe
+      scope: jakarta.inject.Singleton
+
+app:
+  timezone: America/Lima
+  query-count-limit: 10
