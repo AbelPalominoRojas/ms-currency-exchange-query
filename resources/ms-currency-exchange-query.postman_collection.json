@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "d1bb0970-c2e8-47fb-b999-beb8a6dd7e10",
+		"name": "ms-currency-exchange-query",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "client",
+			"item": [
+				{
+					"name": "currency-exchange-query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://free.e-api.net.pe/tipo-cambio/today.json",
+							"protocol": "https",
+							"host": [
+								"free",
+								"e-api",
+								"net",
+								"pe"
+							],
+							"path": [
+								"tipo-cambio",
+								"today.json"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "customer-exchange-rates",
+			"item": [
+				{
+					"name": "validate",
+					"item": [
+						{
+							"name": "customerDni (is invalid)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/customer-exchange-rates/:customerDni",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"customer-exchange-rates",
+										":customerDni"
+									],
+									"variable": [
+										{
+											"key": "customerDni",
+											"value": "abc"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "customer-exchange-rates/{customerDni}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customer-exchange-rates/:customerDni",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customer-exchange-rates",
+								":customerDni"
+							],
+							"variable": [
+								{
+									"key": "customerDni",
+									"value": "96857466"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
