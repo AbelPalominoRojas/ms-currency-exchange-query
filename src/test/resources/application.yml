@@ -18,6 +18,7 @@ quarkus:
       url: jdbc:sqlserver://${database-server}:${database-port};databaseName=${database-name};encrypt=true;trustServerCertificate=true
 
   hibernate-orm:
+    enabled: false
     jdbc:
       timezone: ${app.timezone}
     schema-management:
@@ -27,7 +28,7 @@ quarkus:
 
   rest-client:
     exchange-rate-api:
-      url: https://free.e-api.net.pe
+      url: https://domain.of.client.api
       scope: jakarta.enterprise.context.ApplicationScoped
 
 app:
